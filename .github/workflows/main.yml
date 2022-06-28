@@ -23,8 +23,10 @@ jobs:
       - uses: actions/checkout@v3
       - id: build-scan-binary
         name: compile binary from go code
-        run: cd scan && go build -o ../build/scan && ls
-      
+        run: cd scan && go build -o ../build/scan
+      - id: run-scan-binary
+        name: run go scan binary to detect runtime/framework detection
+        run: ./build/scan
       - id: goodbye
         name: say goodbye
         run: goodbye.sh
