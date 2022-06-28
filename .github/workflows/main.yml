@@ -26,4 +26,4 @@ jobs:
       
       - id: goodbye
         name: say goodbye
-        run: echo goodbye!
+        run: goodbye.sh
