@@ -22,7 +22,7 @@ jobs:
     steps:
       - id: build-scan-binary
         name: compile binary from go code
-        run: pwd
+        run: cd scan && go build -o ../build/scan && ls
       
       - id: goodbye
         name: say goodbye
