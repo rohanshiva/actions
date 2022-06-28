@@ -1,0 +1,11 @@
+name: 'sample'
+description: 'sample gh action that run scanner to detect runtime/framework'
+runs:
+  using: "composite"
+  steps:
+    - id: build-scan-binary
+      run: cd scan && go build -o ../build/scan
+      shell: bash
+    - id: run-scan-binary
+      run: ./build/scan
+      shell: bash
