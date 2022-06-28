@@ -12,6 +12,6 @@ jobs:
         with:
           go-version: '1.18.x'
       - name: Install dependencies
-        run: go get .
+        run: cd scan && go get .
       - name: Build
-        run: go build -o ./scan
+        run: cd scan && go build -o ../scan
