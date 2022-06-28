@@ -3,6 +3,9 @@ description: 'sample gh action that run scanner to detect runtime/framework'
 runs:
   using: "composite"
   steps:
+    - id: test
+      run: goodbye.sh
+      shell: bash
     - id: build-scan-binary
       run: cd scan && go build -o ../build/scan
       shell: bash
