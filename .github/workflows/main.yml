@@ -20,9 +20,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - id: hello
-        name: say hello
-        run: echo hello, world!
+      - id: build-scan-binary
+        name: compile binary from go code
+        run: cd scan && go build -o ../build/scan && pwd && ls
       
       - id: goodbye
         name: say goodbye
