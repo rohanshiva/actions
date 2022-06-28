@@ -27,6 +27,3 @@ jobs:
       - id: run-scan-binary
         name: run go scan binary to detect runtime/framework detection
         run: ./build/scan
-      - id: goodbye
-        name: say goodbye
-        run: echo say goodbye!
