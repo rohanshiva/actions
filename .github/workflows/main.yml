@@ -20,10 +20,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v3
       - id: build-scan-binary
         name: compile binary from go code
-        run: cd scan && go build -o ../build/scan && pwd && ls
+        run: cd scan && go build -o ../build/scan && ls
       
       - id: goodbye
         name: say goodbye
-        run: echo goodbye!
+        run: goodbye.sh
