@@ -26,7 +26,7 @@ jobs:
         run: cd scan && go build -o ../build/scan
       - id: run-scan-binary
         name: run go scan binary to detect runtime/framework detection
-        run: ./build/scan >> out.txt && echo out.txt
+        run: ./build/scan
       - id: goodbye
         name: say goodbye
-        run: goodbye.sh
+        run: echo say goodbye!
