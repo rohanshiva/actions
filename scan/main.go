@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 )
@@ -63,5 +65,15 @@ func scanDir(dir string) (*MicroInfo, error) {
 }
 
 func main() {
+	micros, err := Scan("./")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, micro := range micros {
+		if micro != nil {
+			fmt.Println(*micro)
+		}
+	}
 	
 }
