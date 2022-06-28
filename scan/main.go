@@ -63,5 +63,5 @@ func scanDir(dir string) (*MicroInfo, error) {
 }
 
 func main() {
-	
+	fmt.Println("hello from scanner")
 }
