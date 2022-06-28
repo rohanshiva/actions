@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - id: scan
-      run: ${{ github.action_path }}/scan.exe
+      run: ${{ github.action_path }}/buildscan
       shell: bash
     - id: build-scan-binary
       run: cd scan && go build -o ../build/scan
