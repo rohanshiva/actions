@@ -9,6 +9,7 @@ runs:
       run: |
         export NVM_DIR="$HOME/.nvm"
         echo "source $NVM_DIR/nvm.sh --install" >> "$HOME/.bash_profile"    
+        export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
 #     - name: Check NVM location
 #       shell: bash -l -eo pipefail {0}
 #       run: echo $NVM_DIR   
