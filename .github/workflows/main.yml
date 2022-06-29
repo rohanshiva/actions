@@ -20,11 +20,9 @@ jobs:
           cd scan
           go build -o ./../build/scan
       - name: Push binary
+        if: github.event_name == 'push'
         run: |
           git config --global user.name "actionsbot"
-          git config --global user.name "actionsbot"
-          git fetch
-          git add .
-          git status
-          git commit -m "actions bot pushing binary for scan"
+          git config --global user.email "actionsbot@github.com"
+          git commit -a -m "actions bot pushing binaries"
           git push
