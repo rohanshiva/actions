@@ -84,7 +84,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cmd := exec.Command("cd /opt/hostedtoolcache && ls")
+	cmd := exec.Command("python --version")
 	var out bytes.Buffer
 	cmd.Stdout = &out
 
