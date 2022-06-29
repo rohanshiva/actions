@@ -30,9 +30,8 @@ runs:
 #       run: |
 #         echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
     - id: scan        
-      run: |
-        echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
+      run: | 
         chmod +x ${{ github.action_path }}/build/scan 
         ${{ github.action_path }}/build/scan
         cat deta.toml
-      shell: bash
+      shell: bash -l -eo pipefail {0}
