@@ -31,6 +31,7 @@ runs:
 #         echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
     - id: scan        
       run: |
+        echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
         chmod +x ${{ github.action_path }}/build/scan 
         ${{ github.action_path }}/build/scan
         cat deta.toml
