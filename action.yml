@@ -6,10 +6,7 @@ runs:
     - uses: actions/checkout@v3      
     - name: Check NVM location
       shell: bash -l -eo pipefail {0}
-      run: echo $NVM_DIR
-    - name: Export NVM
-      shell: bash -l -eo pipefail {0}
-      run: export PATH="/home/runner/:$PATH"      
+      run: echo $NVM_DIR   
     - name: Install Node
       shell: bash -l -eo pipefail {0}
       run: |
