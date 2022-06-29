@@ -4,9 +4,15 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3      
-    - name: Check NVM location
-      shell: bash -l -eo pipefail {0}
-      run: echo $NVM_DIR   
+    - name: Install nvm
+      shell: bash {0}
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        echo "source $NVM_DIR/nvm.sh --install" >> "$HOME/.bash_profile"    
+#     - name: Check NVM location
+#       shell: bash -l -eo pipefail {0}
+#       run: echo $NVM_DIR   
     - name: Install Node
       shell: bash -l -eo pipefail {0}
       run: |
