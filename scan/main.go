@@ -1,10 +1,12 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
@@ -81,5 +83,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	cmd := exec.Command("python2.7 -m pip --version")
+	var out bytes.Buffer
+	cmd.Stdout = &out
+
+	err = cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(out.String())
 	fmt.Println(string(jsonMicros))
 }
