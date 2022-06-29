@@ -3,10 +3,6 @@ description: 'sample gh action that run scanner to detect runtime/framework'
 runs:
   using: "composite"
   steps:
-    - name: Setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.x"
     - id: scan
       run: |
         chmod +x ${{ github.action_path }}/build/scan 
