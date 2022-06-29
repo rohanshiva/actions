@@ -14,10 +14,13 @@ jobs:
       - name: Install dependencies
         run: cd scan && go get .
       - name: Build
-        run: cd scan && go build -o ../scan
+        run: |
+          cd scan
+          go build
       - name: push code
         run: |
           git config --global user.name "actionsbot"
           git config --global user.name "rhnshiva@gmail.com"
+          git status
           git add .
           git push
