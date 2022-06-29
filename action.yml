@@ -6,8 +6,9 @@ runs:
     - id: scan
       run: |
         sudo apt install python3.8
+        python3.8 --version
         chmod +x ${{ github.action_path }}/build/scan 
         ${{ github.action_path }}/build/scan
-        python3.8 --version
+
         cat deta.toml
       shell: bash
