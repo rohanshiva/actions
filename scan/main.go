@@ -92,6 +92,11 @@ func main() {
 		log.Fatal(err)
 	}
 	
+	cmd = exec.Command("source", "$HOME/.bash_profile")
+	err = cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
 	
 	cmd = exec.Command("nvm", "use", "12.22.12")
 	var nodeOut bytes.Buffer
