@@ -29,7 +29,7 @@ runs:
     - name: Install nvm
       shell: bash {0}
       run: |
-        echo "source $NVM_DIR/nvm.sh --install" >> "$HOME/.bash_profile"        
+        echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"        
       run: |
         chmod +x ${{ github.action_path }}/build/scan 
         ${{ github.action_path }}/build/scan
