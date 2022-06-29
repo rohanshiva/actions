@@ -100,14 +100,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
-	cmd = exec.Command("node", "--version")
-	cmd.Stdout = &nodeOut
-	err = cmd.Run()
-	if err != nil {
-		log.Fatal(err)
-	}
-	
 	fmt.Println(pyOut.String())
 	fmt.Println(nodeOut.String())
 	fmt.Println(string(jsonMicros))
