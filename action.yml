@@ -7,7 +7,7 @@ runs:
     - name: Install nvm
       shell: bash {0}
       run: |
-        echo "source $NVM_DIR --install" >> "$HOME/.bash_profile"    
+        echo "source $NVM_DIR/nvm.sh --install" >> "$HOME/.bash_profile"    
 #     - name: Check NVM location
 #       shell: bash -l -eo pipefail {0}
 #       run: echo $NVM_DIR   
