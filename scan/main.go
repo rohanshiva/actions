@@ -71,6 +71,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	cfg := NewAppConfig("./", "app", micros)
+	err = cfg.SaveConfig("./")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	jsonMicros, err := json.Marshal(micros)
 	if err != nil {
 		log.Fatal(err)
