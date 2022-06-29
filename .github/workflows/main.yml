@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: |
           cd scan
-          go build -o ./../
+          go build -o ./../build/scan
       - name: Push binary
         run: |
           git config --global user.name "actionsbot"
