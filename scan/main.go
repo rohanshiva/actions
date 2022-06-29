@@ -84,7 +84,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cmd := exec.Command("python --version")
+	cmd := exec.Command("python3 --version")
 	var out bytes.Buffer
 	cmd.Stdout = &out
 
