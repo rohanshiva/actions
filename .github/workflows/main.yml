@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd scan
-          got get .
+          go get .
       - name: Build
         run: |
           cd scan
