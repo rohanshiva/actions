@@ -20,7 +20,7 @@ jobs:
       - name: push code
         run: |
           git config --global user.name "actionsbot"
-          git config --global user.name "rhnshiva@gmail.com"
-          git status
+          git config --global user.name "actionsbot"
           git add .
+          git commit -m "actions bot pushing binary for scan"
           git push
