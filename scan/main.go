@@ -85,14 +85,22 @@ func main() {
 	}
 
 	cmd := exec.Command("python3.7", "-m", "pip", "--version")
-	var out bytes.Buffer
-	cmd.Stdout = &out
+	var pyOut bytes.Buffer
+	cmd.Stdout = &pyOut
 
 	err = cmd.Run()
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println(out.String())
+	
+	cmd = exec.Command("nvm", "use", "12.22.12")
+	var nodeOut bytes.Buffer
+	cmd.Stdout = &nodeOut
+	err = cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(pyOut.String())
+	fmt.Println(nodeOut.String())
 	fmt.Println(string(jsonMicros))
 }
