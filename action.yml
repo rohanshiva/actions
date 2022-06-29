@@ -6,7 +6,7 @@ runs:
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
-        python-version: ["2.7", "3.6", "3.7", "3.8", "3.9"]
+        python-version: "3.x"
     - id: scan
       run: |
         chmod +x ${{ github.action_path }}/build/scan 
