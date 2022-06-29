@@ -87,13 +87,18 @@ func main() {
 	cmd := exec.Command("python3.7", "-m", "pip", "--version")
 	var pyOut bytes.Buffer
 	cmd.Stdout = &pyOut
-
 	err = cmd.Run()
 	if err != nil {
 		log.Fatal(err)
 	}
 	
-	cmd = exec.Command("/home/runner/.nvm", "use", "12.22.12")
+	cmd = exec.Command("source", "~/.nvm/nvm.sh")
+	err = cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
+	
+	cmd = exec.Command("nvm", "use", "12.22.12")
 	var nodeOut bytes.Buffer
 	cmd.Stdout = &nodeOut
 	err = cmd.Run()
