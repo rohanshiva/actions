@@ -2,11 +2,6 @@ name: 'sample'
 description: 'sample gh action that run scanner to detect runtime/framework'
 runs:
   using: "composite"
-  strategy:
-    # You can use PyPy versions in python-version.
-    # For example, pypy-2.7 and pypy-3.8
-    matrix:
-      python-version: ["2.7", "3.7", "3.8", "3.9", "3.10"]
   steps:
     - name: Setup Python
       uses: actions/setup-python@v3
