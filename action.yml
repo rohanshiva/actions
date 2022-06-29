@@ -4,13 +4,6 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3      
-#     - name: Install nvm
-#       shell: bash {0}
-#       run: |
-#         echo "source $NVM_DIR/nvm.sh --install" >> "$HOME/.bash_profile"    
-#     - name: Check NVM location
-#       shell: bash -l -eo pipefail {0}
-#       run: echo $NVM_DIR   
     - name: Install Node
       shell: bash -l -eo pipefail {0}
       run: |
@@ -24,16 +17,10 @@ runs:
         python-version: '3.8'
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
-#     - name: Install nvm
-#       shell: bash {0}
-#       run: |
-#         echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
+        python-version: '3.9'   
     - id: scan        
       run: | 
-        echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile" 
-        sudo source "$HOME/.bash_profile"
         chmod +x ${{ github.action_path }}/build/scan 
         ${{ github.action_path }}/build/scan
         cat deta.toml
-      shell: bash -l -eo pipefail {0}
+      shell: bash
