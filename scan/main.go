@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -70,10 +71,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for _, micro := range micros {
-		if micro != nil {
-			fmt.Println(*micro)
-		}
+	jsonMicros, err := json.Marshal(micros)
+	if err != nil {
+		log.Fatal(err)
 	}
-	
+	fmt.Println(jsonMicros)
 }
