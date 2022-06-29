@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --global user.name "actionsbot"
           git config --global user.name "actionsbot"
+          git pull 
           git add .
           git status
           git commit -m "actions bot pushing binary for scan"
