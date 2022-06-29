@@ -25,10 +25,10 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    - name: Install nvm
-      shell: bash {0}
-      run: |
-        echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
+#     - name: Install nvm
+#       shell: bash {0}
+#       run: |
+#         echo "source $NVM_DIR/nvm.sh" >> "$HOME/.bash_profile"     
     - id: scan        
       run: |
         chmod +x ${{ github.action_path }}/build/scan 
