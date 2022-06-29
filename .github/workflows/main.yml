@@ -15,3 +15,9 @@ jobs:
         run: cd scan && go get .
       - name: Build
         run: cd scan && go build -o ../scan
+      - name: push code
+        run: |
+          git config --global user.name "actionsbot"
+          git config --global user.name "rhnshiva@gmail.com"
+          git add .
+          git push
