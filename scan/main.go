@@ -92,7 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	cmd = exec.Command("$HOME/.bash_profile")
+	cmd = exec.Command("~/.bash_profile")
 	err = cmd.Run()
 	if err != nil {
 		log.Fatal(err)
