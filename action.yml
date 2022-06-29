@@ -1,14 +1,11 @@
 name: 'sample'
 description: 'sample gh action that run scanner to detect runtime/framework'
-outputs:
-  micros:
-    description: "runtimes/frameworks scanned"
-    value: ${{ steps.scan.outputs.micros }}
 runs:
   using: "composite"
   steps:
     - id: scan
       run: |
         chmod +x ${{ github.action_path }}/build/scan 
-        echo "::set-output name=micros::$(${{ github.action_path }}/build/scan)"
+        ${{ github.action_path }}/build/scan
+        cat deta.toml
       shell: bash
