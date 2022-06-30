@@ -19,7 +19,7 @@ runs:
       with:
         python-version: '3.9'   
     - name: node
-      run: echo $NVM_DIR
+      run: bash -c source $NVM_DIR/nvm.sh
       shell: bash
     - id: scan        
       run: | 
