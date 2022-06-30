@@ -92,7 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	cmd = exec.Command("/opt/hostedtoolcache/node/12.22.12/x64/bin/npm", "--version")
+	cmd = exec.Command("/opt/hostedtoolcache/node/12.22.12/x64/bin/node", "--version")
 	var nodeOut bytes.Buffer
 	cmd.Stdout = &nodeOut
 	err = cmd.Run()
@@ -102,7 +102,7 @@ func main() {
 	
 	fmt.Println(nodeOut.String())	
 	
-	cmd = exec.Command("/opt/hostedtoolcache/node/14.19.3/x64/bin/npm", "--version")
+	cmd = exec.Command("/opt/hostedtoolcache/node/14.19.3/x64/bin/node", "--version")
 	cmd.Stdout = &nodeOut
 	err = cmd.Run()
 	if err != nil {
