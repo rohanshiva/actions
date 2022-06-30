@@ -18,6 +18,9 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'   
+    - name: node
+      run: bash -l source "$NVM_DIR/nvm.sh" 
+      shell: bash
     - id: scan        
       run: | 
         chmod +x ${{ github.action_path }}/build/scan 
