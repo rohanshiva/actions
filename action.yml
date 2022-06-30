@@ -16,7 +16,7 @@ runs:
       with:
         node-version: '14.x'       
     - name: check-node
-      run: cd /opt/hostedtoolcache/node/12.22.12/x64/bin && ls
+      run: cd /opt/hostedtoolcache/node/12.22.12/x64/bin/npm && ls
       shell: bash
     - uses: actions/setup-python@v4
       with:
