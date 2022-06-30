@@ -92,11 +92,15 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	nodeout, err := exec.Command("bash", "-c", ". $HOME/nvm.sh; nvm --version").Output()
+	cmd = exec.Command("/opt/hostedtoolcache/node/12.22.12/x64/bin/npm", "--version")
+	var nodeOut bytes.Buffer
+	cmd.Stdout = &nodeOut
+	err = cmd.Run()
 	if err != nil {
-	    fmt.Printf("error %s", err)
+		log.Fatal(err)
 	}
+	
 	fmt.Println(pyOut.String())
-	fmt.Println(string(nodeout))
+	fmt.Println(nodeOut.String())
 	fmt.Println(string(jsonMicros))
 }
