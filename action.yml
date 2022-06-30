@@ -19,7 +19,7 @@ runs:
       with:
         python-version: '3.9'   
     - name: node
-      run: bash -c source ~/.bash
+      run: bash -c source ~/.bash_profile
       shell: bash
     - id: scan        
       run: | 
