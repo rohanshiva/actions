@@ -92,14 +92,11 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	cmd = exec.Command("bash", "-l", ". $HOME/nvm.sh; nvm --version")
-	var nodeOut bytes.Buffer
-	cmd.Stdout = &nodeOut
-	err = cmd.Run()
+	cmd, err = exec.Command("bash", "-c", ". $HOME/nvm.sh; nvm --version").Output()
 	if err != nil {
-		log.Fatal(err)
+	    fmt.Printf("error %s", err)
 	}
 	fmt.Println(pyOut.String())
-	fmt.Println(nodeOut.String())
+	fmt.Println(string(cmd))
 	fmt.Println(string(jsonMicros))
 }
