@@ -92,7 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	nodeout, err = exec.Command("bash", "-c", ". $HOME/nvm.sh; nvm --version").Output()
+	nodeout, err := exec.Command("bash", "-c", ". $HOME/nvm.sh; nvm --version").Output()
 	if err != nil {
 	    fmt.Printf("error %s", err)
 	}
