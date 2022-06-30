@@ -92,7 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	cmd = exec.Command(("bash", "-c", "nvm", "--version")
+	cmd = exec.Command("bash", "-c", "nvm", "--version")
 	var nodeOut bytes.Buffer
 	cmd.Stdout = &nodeOut
 	err = cmd.Run()
