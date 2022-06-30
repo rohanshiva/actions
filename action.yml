@@ -4,11 +4,17 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3      
-    - name: Install Node
-      shell: bash -l -eo pipefail {0}
-      run: |
-        nvm install 14.19.3
-        nvm install 12.22.12
+#     - name: Install Node
+#       shell: bash -l -eo pipefail {0}
+#       run: |
+#         nvm install 14.19.3
+#         nvm install 12.22.12
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '12.x'
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14.x'        
     - uses: actions/setup-python@v4
       with:
         python-version: '3.7'
@@ -18,9 +24,6 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'   
-    - name: node
-      run: nvm --version
-      shell: bash
     - id: scan        
       run: | 
         chmod +x ${{ github.action_path }}/build/scan 
