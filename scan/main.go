@@ -100,6 +100,15 @@ func main() {
 		log.Fatal(err)
 	}
 	
+	fmt.Println(nodeOut.String())	
+	
+	cmd = exec.Command("/opt/hostedtoolcache/node/14.19.3/x64/bin/npm", "--version")
+	cmd.Stdout = &nodeOut
+	err = cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
+	
 	fmt.Println(pyOut.String())
 	fmt.Println(nodeOut.String())
 	fmt.Println(string(jsonMicros))
