@@ -46,5 +46,5 @@ runs:
     - id: runner
       name: 
       run: | 
-        ${{ github.action_path }}/build/runner -app=${{ inputs.app }} -desc=${{ inputs.desc }} -version=${{ inputs.version }}
+        ${{ github.action_path }}/build/runner -app="${{ inputs.app }}" -desc="${{ inputs.desc }}" -version="${{ inputs.version }}"
       shell: bash
