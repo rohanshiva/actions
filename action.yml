@@ -1,26 +1,35 @@
 name: 'sample'
-description: 'sample gh action that run scanner to detect runtime/framework'
+description: 'sample desc'
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3      
-    - uses: actions/setup-node@v3
+    - name: Setup NodeJS 12.x
+      uses: actions/setup-node@v3
       with:
         node-version: '12.x'
-    - uses: actions/setup-node@v3
+    - name: Setup NodeJS 14.x
+      uses: actions/setup-node@v3
       with:
-        node-version: '14.x'       
-    - uses: actions/setup-python@v4
+        node-version: '14.x'
+    - name: Setup Python 3.7
+      uses: actions/setup-python@v4
       with:
         python-version: '3.7'
-    - uses: actions/setup-python@v4
+    - name: Setup Python 3.8
+      uses: actions/setup-python@v4
       with:
         python-version: '3.8'
-    - uses: actions/setup-python@v4
+    - name: Setup Python 3.9
+      uses: actions/setup-python@v4
       with:
         python-version: '3.9'   
-    - id: runner        
+    - id: permissions
+      name: Allow the runner script to run
+      run: chmod +x ${{ github.action_path }}/build/runner
+      shell: bash
+    - id: runner
+      name: 
       run: | 
-        chmod +x ${{ github.action_path }}/build/runner
-        ${{ github.action_path }}/build/runner -app="app_id" -desc="short desc of my good app"
+        ${{ github.action_path }}/build/runner -app="default" -desc="default desc"
       shell: bash
