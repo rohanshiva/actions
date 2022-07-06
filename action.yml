@@ -19,9 +19,8 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'   
-    - id: scan        
+    - id: runner        
       run: | 
-        chmod +x ${{ github.action_path }}/build/scan 
-        ${{ github.action_path }}/build/scan
-        cat deta.toml
+        chmod +x ${{ github.action_path }}/build/runner
+        ${{ github.action_path }}/build/runner
       shell: bash
