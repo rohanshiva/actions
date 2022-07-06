@@ -22,5 +22,5 @@ runs:
     - id: runner        
       run: | 
         chmod +x ${{ github.action_path }}/build/runner
-        ${{ github.action_path }}/build/runner
+        ${{ github.action_path }}/build/runner -app="app_id" -desc="short desc of my good app"
       shell: bash
