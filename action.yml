@@ -41,7 +41,7 @@ runs:
         python-version: '3.9'   
     - id: permissions
       name: Allow the runner script to run
-      run: chmod +x ${{ github.action_path }}/build/runner
+      run: chmod +x ${{ github.action_path }}/build/runner && echo $ACCESS_TOKEN
       shell: bash
     - id: runner
       name: 
