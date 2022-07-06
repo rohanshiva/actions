@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: '1.18.x'
+      - name: gooos
+        shell: bash
+        run: echo $GOOS $GOARCH
       - name: Install dependencies
         run: |
           cd scan
