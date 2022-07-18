@@ -18,7 +18,15 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3      
+    - name: check
+      run: |
+        cd ./src/deta-express-starter
+        ls
+    - uses: actions/checkout@v3  
+    - name: check
+      run: |
+        cd ./src/deta-express-starter
+        ls 
     - name: Setup NodeJS 12.x
       uses: actions/setup-node@v3
       with:
