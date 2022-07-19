@@ -1,5 +1,5 @@
 name: 'sample'
-description: 'sample'
+description: 'publish'
 inputs:
   app:  
     description: 'application id'
@@ -18,7 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3  
+    - uses: actions/checkout@v3      
     - name: Setup NodeJS 12.x
       uses: actions/setup-node@v3
       with:
@@ -39,12 +39,12 @@ runs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'   
-    - id: permissions
-      name: Allow the runner script to run
-      run: chmod +x ${{ github.action_path }}/build/runner && echo $ACCESS_TOKEN
+    - id: runner-permissions
+      name: Allow the builder script to run
+      run: chmod +x ${{ github.action_path }}/build/ubuntu-latest-runner
       shell: bash
-    - id: runner
-      name: 
+    - id: run-builder
+      name: run build script
       run: | 
-        ${{ github.action_path }}/build/runner -app="${{ inputs.app }}" -desc="${{ inputs.desc }}" -version="${{ inputs.version }}"
+        ${{ github.action_path }}/build/ubuntu-latest-runner -app="${{ inputs.app }}" -desc="${{ inputs.desc }}" -version="${{ inputs.version }}"
       shell: bash
